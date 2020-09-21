@@ -6,3 +6,18 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
+*{
+  box-sizing:border-box;
+}
+.question-form{
+  background-color: papayawhip;
+  border: 1px solid black;
+  margin: 10px 5px; 
+  padding: 10px;
+
+}
+@media all and (min-width:800px){
+  body{
+    text-align: center;
+  }
+}

@@ -25,7 +25,7 @@ const store = {
       correctAnswer: 'D'
     },
     {
-      question: 'What is the name of this dish?'+'<br>'+ '<br>'+'<img src="images/salmon_coulibiac.jpg" alt"Russian Coulibiac" style=" width:500px; height:200px;">'+'<br>',
+      question: 'What is the name of this dish?'+'<br>'+ '<br>'+'<img src="image/salmon_coulibiac.jpg" alt"Russian Coulibiac" style=" width:500px; height:200px;">'+'<br>',
       answers: [
         'A: Beef Wellington ',
         'B: Shepherd pie',

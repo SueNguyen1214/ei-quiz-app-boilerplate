@@ -106,13 +106,13 @@ function questionTemplate(){
     <div class="quizQuestion">
       <form class="quizChoice">
         <h2> ${currentQuestion}</h2>
-          <input name="choice" type="radio" required value ="A">
+          <input name="choice" type="radio" required value ="A" id="A">
             <label for ="A">${firstChoice}</label><br>
-          <input name="choice" type="radio" value ="B">
+          <input name="choice" type="radio" value ="B" id="B">
             <label for ="B">${secondChoice}</label><br>
-          <input name="choice" type="radio" value ="C">
+          <input name="choice" type="radio" value ="C" id="C">
             <label for ="C">${thirdChoice}</label><br>
-          <input name="choice" type="radio" value ="D">
+          <input name="choice" type="radio" value ="D" id="D">
             <label for ="D">${fourthChoice}</label><br>
             <button type="submit" class=" submitBttn"> Submit</button>
       </form>

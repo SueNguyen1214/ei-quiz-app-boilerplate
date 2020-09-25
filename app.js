@@ -99,8 +99,8 @@ function questionTemplate(){
   $('.message').html(`
     <div class="questionNumber">
     
-      <h3> Question Number:${store.questionNumber+1}/${totalQuestion}</h3>
-      <h3 id="currentScore"> Score:${store.score}</h3>
+      <h3> Question Number: ${store.questionNumber+1}/${totalQuestion}</h3>
+      <h3 id="currentScore"> Score: ${store.score}</h3>
     
     </div>
     <div class="quizQuestion">
@@ -124,12 +124,16 @@ function questionTemplate(){
 //this fucntion is to display the final result template
 function finalResult(){
   $('.message').html(`
-    <p>Your Score is:${store.score}</p>
+  <div class="finalResult">
+    <p>Your Final Score is: ${store.score}/${store.questions.length}</p>
+    <button type="submit" class="restartBttn"> Restart the Quiz</button>
+  </div>
   `)
 }
 /********** RENDER FUNCTION(S) **********/
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
+//This function is to display the welcome message
 function displayWelcomeMessage(){
   if (store.quizStarted===false){
     welcomeMessage()
@@ -138,7 +142,7 @@ function displayWelcomeMessage(){
 /********** EVENT HANDLER FUNCTIONS **********/
 // These functions handle events (submit, click, etc)
 
-//This function is for when the start the quiz button is clicked
+//This function is for when the start-the-quiz button is clicked
 function startQuiz(){
   //when the users click on the start Quiz button, take them to the first question
   $('.startBttn').on('click', ()=>{
@@ -146,7 +150,7 @@ function startQuiz(){
     questionTemplate();
   })
 }
-//this question to check whether the answer is correct or not
+//this question to check whether the slected answer is correct or not
 function checkAnswer(){
   let chosenAnswer=$("input[name=choice]:checked").val();
   const rightAnswer=store.questions[store.questionNumber].correctAnswer;
@@ -166,7 +170,7 @@ function checkAnswer(){
   <button type="submit" class="nextBttn"> Next</button>
   `)
 }
-//This function is for submit answer for each question
+//This function is for answer submission.
 function submitAnswer(){
   $('body').on('submit','.quizChoice', (event)=>{
     event.preventDefault();
@@ -182,12 +186,7 @@ function nextQuestion(){
       store.questionNumber++;
       questionTemplate();    
     }else{
-      $('.message').html(`
-      <div class="finalResult">
-        <p>Your Final Score is:${store.score}/${store.questions.length}</p>
-       <button type="submit" class="restartBttn"> Restart the Quiz</button>
-      </div>
-      `)
+      finalResult();
     }
   });
 }
